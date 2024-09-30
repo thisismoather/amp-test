@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Azure Media Player</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!--*****START OF Azure Media Player Scripts*****-->
+        <!--Note: DO NOT USE the "latest" folder in production. Replace "latest" with a version number like "1.0.0"-->
+        <!--EX:<script src="//amp.azure.net/libs/amp/1.0.0/azuremediaplayer.min.js"></script>-->
+        <!--Azure Media Player versions can be queried from //aka.ms/ampchangelog-->
+        <link href="https://amp.azure.net/libs/amp/latest/skins/amp-default/azuremediaplayer.min.css" rel="stylesheet">
+        <script src="https://amp.azure.net/libs/amp/latest/azuremediaplayer.min.js"></script>
+        <!--*****END OF Azure Media Player Scripts*****-->
+
+</head>
+<body>
+    <h1>Sample: Clear</h1>
+    <video id="azuremediaplayer" class="azuremediaplayer amp-default-skin amp-big-play-centered" tabindex="0"> </video>
+    <script>
+        var myOptions = {
+            controls: false,
+                logo: { enabled: false },
+                nativeControlsForTouch: false,
+                fluid: true,
+                autoplay: true,
+                poster: "" 
+        };
+        var myPlayer = amp("azuremediaplayer", myOptions);
+        myPlayer.src([
+		{ 
+		src: "https://ep-test-mediakindsubscription.westeurope.streaming.mediakind.com/3917aaaf-2de0-48ff-9ebd-20b893c26516/ALS-LOG-01-07.ism/manifest(format=mpd-time-cmaf)",
+		type: "application/vnd.ms-sstr+xml",
+		protectionInfo: [{
+                    type: "AES",
+                    authenticationToken: "eyJhbGciOiJSUzI1NiIsImtpZCI6IjdhMGM1ZTkwYjA4MzQ0MTA5ZmM2ZjdhYWIxMDdlMzIwIiwidHlwIjoiSldUIn0.eyJqdGkiOiI1MzA4MjRiMC0zOTRkLTRjYWQtOGI1ZS0zMzgyNjk5MTFhNmEiLCJpc3MiOiJwcm9kLm1rLmlvIiwiaWF0IjoxNzI2OTI4MzI3LCJleHAiOjE3NTY4NTc2MDAsInN1YiI6IjUxODdmMmZmLTBmYWMtNGNiMy04ZmQ4LWY3YmRkZjJlZWI2ZiIsIm1raW8iOnsidHlwZSI6ImZ1bGwtYWNjZXNzIiwiY3VzdG9tZXIiOiI1MzRmMGI4Mi1mYWMyLTRlYTctOTUwOS01NTkxZDVhMTVhNmIifX0.Vqjx7L1FfmQhQWz1dliOj9wMI-oUOadpVXM3L3J2d0i1VuOTQP3TDfdyVRzD6oG5K2b3Bd9sT5WWuxJXipQWgeTGVsfHYLLmvZBYHE012BY3Jj8gHfqZ7eZrumWz-88y0mQebGdkv11SHuNvVVoinXY9C6dtuyFo4i66qhgx0uL9mVRUBfdmPcn1mmCFZsmcJ3p8GYijqvw2W94JLFWkmxHaZ9Nw9dGgZQzGaO4EzW2VU1I57BoIaC2t0BKAaJfitjBoiyiXKYdzFQnCrab0PTlKVtlsei81Eph089U-VAloPTQzryV2Jz6v5xsP7zoebTym7R6dFdgidrIqf6vF7w"
+                }],
+		streamingFormats: ["DASH"]
+
+		},
+
+		]);
+    </script>
+    <footer>
+        <br />
+        <p>© Microsoft Corporation 2016</p>
+    </footer>
+
+</body>
+</html>
